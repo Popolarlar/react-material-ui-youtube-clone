@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 import { Divider } from "@material-ui/core";
 import ChipBar from "./../ChipBar";
-import VideoGrid from "./../VideoGrid";
+import VideoGrid from "./../VideoGrid/VideoGridContainer";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,11 +21,11 @@ const Main = () => {
       <ChipBar />
       <Divider />
       <div className="content">
-        <VideoGrid />
+        <VideoGrid source="highLight" />
         <Divider />
-        <VideoGrid title="Breaking news" />
+        <VideoGrid source="news" title="Breaking news" />
         <Divider />
-        <VideoGrid title="Latest YouTube posts" />
+        <VideoGrid source="latest" title="Latest YouTube posts" />
       </div>
     </div>
   );
