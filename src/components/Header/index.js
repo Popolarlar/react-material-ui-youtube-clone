@@ -6,14 +6,16 @@ import {
   IconButton,
   Typography,
   InputBase,
-  Badge,
+  Avatar,
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
-import AccountCircle from "@material-ui/icons/AccountCircle";
-import MailIcon from "@material-ui/icons/Mail";
+import VideoCallIcon from "@material-ui/icons/VideoCall";
+import AppsIcon from "@material-ui/icons/Apps";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import logo from "./../../assets/yt_logo_rgb_light.png";
+import { AvatarImg } from "./../../assets/resource";
+import MenuButton from "../MenuButton";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -73,8 +75,12 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     display: "flex",
     justifyContent: "flex-end",
+    minWidth: "225px",
     [theme.breakpoints.up("sm")]: {
       flexGrow: 0,
+    },
+    "& > *": {
+      marginRight: theme.spacing(1.25),
     },
   },
   offset: theme.mixins.toolbar,
@@ -82,6 +88,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Header = () => {
   const classes = useStyles();
+
   return (
     <>
       <AppBar className={classes.root}>
@@ -117,27 +124,46 @@ const Header = () => {
               />
             </div>
           </div>
+
           <div className={classes.sectionDesktop}>
-            <IconButton aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <MailIcon />
-              </Badge>
-            </IconButton>
-            <IconButton aria-label="show 17 new notifications" color="inherit">
-              <Badge badgeContent={17} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              edge="end"
-              aria-label="account of current user"
-              // aria-controls={menuId}
-              aria-haspopup="true"
-              // onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
+            <MenuButton
+              icon={<VideoCallIcon />}
+              items={["Upload video", "Go live"]}
+            ></MenuButton>
+
+            <MenuButton
+              icon={<AppsIcon />}
+              items={[
+                "YouTube TV",
+                "YouTube Music",
+                "YouTube Kids",
+                "Creator Academy",
+                "YouTube for Artists",
+              ]}
+            ></MenuButton>
+            <MenuButton
+              icon={<NotificationsIcon />}
+              items={["Notification 1", "Notification 2"]}
+            ></MenuButton>
+
+            <MenuButton
+              icon={
+                <Avatar
+                  className={classes.account}
+                  alt="account of current user"
+                  src={AvatarImg}
+                />
+              }
+              items={[
+                "Dark theme: off",
+                "Language: English",
+                "Location: Australia",
+              ]}
+            ></MenuButton>
+
+            {/* <Badge badgeContent={2} color="secondary">
+              <NotificationsIcon />
+            </Badge> */}
           </div>
         </Toolbar>
       </AppBar>
