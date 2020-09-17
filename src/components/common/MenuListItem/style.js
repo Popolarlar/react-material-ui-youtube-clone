@@ -3,9 +3,24 @@
  */
 
 const style = (theme) => ({
-  root: {},
-  active: {
-    color: theme.palette.error.main,
+  root: {
+    "&.active .icon": {
+      color: theme.palette.error.main,
+    },
+  },
+  miniRoot: {
+    display: "flex",
+    flexDirection: "column",
+    padding: theme.spacing(2, 0, 1, 0),
+
+    "&.active": {
+      color: theme.palette.error.main,
+    },
+
+    "& .icon": {
+      minWidth: "unset",
+      color: "inherit",
+    },
   },
 });
 

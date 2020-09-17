@@ -4,8 +4,8 @@ import React from "react";
 import { withStyles } from "@material-ui/core";
 import style from "./style";
 
-import List from "@material-ui/core/List";
-import Divider from "@material-ui/core/Divider";
+// Material ui
+import { List, Divider } from "@material-ui/core";
 import HomeIcon from "@material-ui/icons/Home";
 import WhatshotIcon from "@material-ui/icons/Whatshot";
 import SubscriptionsIcon from "@material-ui/icons/Subscriptions";
@@ -14,6 +14,8 @@ import HistoryIcon from "@material-ui/icons/History";
 import OndemandVideoIcon from "@material-ui/icons/OndemandVideo";
 import WatchLaterIcon from "@material-ui/icons/WatchLater";
 import PlaylistPlayIcon from "@material-ui/icons/PlaylistPlay";
+
+// Components
 import MenuListItem from "../../../../common/MenuListItem";
 
 const SideBar = ({ classes }) => {
