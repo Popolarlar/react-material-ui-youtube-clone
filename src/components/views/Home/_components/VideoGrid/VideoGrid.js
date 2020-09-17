@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid, Typography } from "@material-ui/core";
-import VideoGridItem from "./component/VideoGridItem";
+import VideoGridItem from "./_components/VideoGridItem";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,8 +24,6 @@ const VideoGrid = ({ title, items }) => {
           {title}
         </Typography>
       )}
-
-      {console.log(title, items.length)}
 
       <Grid container spacing={3}>
         {items !== null &&

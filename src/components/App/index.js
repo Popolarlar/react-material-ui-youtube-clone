@@ -1,27 +1,17 @@
 import React from "react";
-import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-import Header from "./../Header";
-import Home from "./../Home";
-
-const theme = createMuiTheme({
-  mixins: {
-    toolbar: {
-      minHeight: 56,
-    },
-  },
-  palette: {
-    text: {
-      primary: "rgb(85,85,85)",
-    },
-  },
-});
+import { ThemeProvider } from "@material-ui/core/styles";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import theme from "../../theme";
+import Home from "./../views/Home";
 
 const App = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <Header />
-      <Home />
-    </ThemeProvider>
+    <>
+      <CssBaseline />
+      <ThemeProvider theme={theme}>
+        <Home />
+      </ThemeProvider>
+    </>
   );
 };
 

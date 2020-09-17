@@ -1,5 +1,4 @@
 import React from "react";
-import { fade, makeStyles } from "@material-ui/core/styles";
 import {
   AppBar,
   Toolbar,
@@ -7,100 +6,48 @@ import {
   Typography,
   InputBase,
   Avatar,
+  Hidden,
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
 import VideoCallIcon from "@material-ui/icons/VideoCall";
 import AppsIcon from "@material-ui/icons/Apps";
 import NotificationsIcon from "@material-ui/icons/Notifications";
-import logo from "./../../assets/yt_logo_rgb_light.png";
-import { AvatarImg } from "./../../assets/resource";
-import MenuButton from "../MenuButton";
+import logo from "./../../../assets/yt_logo_rgb_light.png";
+import { AvatarImg } from "../../../assets/resource";
+import MenuButton from "../../common/MenuButton";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    width: "100%",
-    background: "white",
-    color: theme.palette.text.primary,
-    boxShadow: "unset",
+// Custom styles
+import { withStyles } from "@material-ui/core";
+import style from "./style";
 
-    "& .MuiIconButton-root": {
-      padding: theme.spacing(1),
-    },
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  logo: {
-    display: "block",
-    width: "80px",
-  },
-  search: {
-    flex: "1 1 auto",
-    display: "none",
-    [theme.breakpoints.up("sm")]: {
-      marginRight: theme.spacing(5),
-      marginLeft: theme.spacing(5),
-      display: "block",
-    },
-  },
-  searchInput: {
-    maxWidth: "728px",
-    position: "relative",
-    margin: "0 auto",
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
-    "&:hover": {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
-    },
-  },
-  searchIcon: {
-    padding: theme.spacing(0, 2),
-    height: "100%",
-    position: "absolute",
-    pointerEvents: "none",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  inputRoot: {
-    color: "inherit",
-  },
-  inputInput: {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-  },
-  sectionDesktop: {
-    flexGrow: 1,
-    display: "flex",
-    justifyContent: "flex-end",
-    minWidth: "225px",
-    [theme.breakpoints.up("sm")]: {
-      flexGrow: 0,
-    },
-    "& > *": {
-      marginRight: theme.spacing(1.25),
-    },
-  },
-  offset: theme.mixins.toolbar,
-}));
-
-const Header = () => {
-  const classes = useStyles();
-
+const Header = ({ classes, toggleDrawer, toggleMenuExpand }) => {
   return (
     <>
       <AppBar className={classes.root}>
         <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="open drawer"
-          >
-            <MenuIcon />
-          </IconButton>
+          <Hidden lgUp>
+            <IconButton
+              edge="start"
+              className={classes.menuButton}
+              color="inherit"
+              aria-label="open drawer"
+              onClick={toggleDrawer}
+            >
+              <MenuIcon />
+            </IconButton>
+          </Hidden>
+          <Hidden mdDown>
+            <IconButton
+              edge="start"
+              className={classes.menuButton}
+              color="inherit"
+              aria-label="expand menu"
+              onClick={toggleMenuExpand}
+            >
+              <MenuIcon />
+            </IconButton>
+          </Hidden>
           {logo ? (
             <img src={logo} alt="logo" className={classes.logo} />
           ) : (
@@ -172,4 +119,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default withStyles(style)(Header);

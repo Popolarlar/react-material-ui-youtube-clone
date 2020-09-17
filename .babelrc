@@ -1,3 +1,15 @@
 {
-  "presets": ["@babel/preset-env", "@babel/preset-react"]
+  "presets": ["@babel/preset-env", "@babel/preset-react"],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "@format/date": "./src/utils/format/date",
+          "@assets/resource": "./src/assets/resource",
+          "@data": "./src/videoData"
+        }
+      }
+    ]
+  ]
 }
