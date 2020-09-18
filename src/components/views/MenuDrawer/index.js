@@ -1,15 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Drawer, IconButton, Typography } from "@material-ui/core";
-import MenuIcon from "@material-ui/icons/Menu";
-import logo from "./../../../assets/yt_logo_rgb_light.png";
+import { Drawer } from "@material-ui/core";
 
 // Custom styles
 import { withStyles } from "@material-ui/core";
 import style from "./style";
 
 // Components
-import SideBar from "./../Home/_components/SideBar";
+import SideBar from "./../ResponsiveMenu/_components/SideBar";
 import MenuLogo from "./../Header/_components/MenuLogo";
 
 const MenuDrawer = ({ classes, drawerOpen, toggleDrawer }) => {
@@ -28,7 +25,7 @@ const MenuDrawer = ({ classes, drawerOpen, toggleDrawer }) => {
       }}
     >
       <MenuLogo toggleDrawer={toggleDrawer} />
-      <SideBar />
+      <SideBar toggleDrawer={toggleDrawer} />
     </Drawer>
   );
 };

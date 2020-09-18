@@ -18,17 +18,29 @@ import PlaylistPlayIcon from "@material-ui/icons/PlaylistPlay";
 // Components
 import MenuListItem from "../../../../common/MenuListItem";
 
-const SideBar = ({ classes }) => {
+const SideBar = ({ classes, toggleDrawer }) => {
   return (
-    <div className={classes.root}>
+    <div className={classes.root} onClick={toggleDrawer}>
       <List className={classes.list}>
-        <MenuListItem primary="Home" icon={<HomeIcon />} active />
-        <MenuListItem primary="Trending" icon={<WhatshotIcon />} />
-        <MenuListItem primary="Subscriptions" icon={<SubscriptionsIcon />} />
+        <MenuListItem to="/" primary="Home" icon={<HomeIcon />} active />
+        <MenuListItem
+          to="/feed/trending"
+          primary="Trending"
+          icon={<WhatshotIcon />}
+        />
+        <MenuListItem
+          to="/feed/subscriptions"
+          primary="Subscriptions"
+          icon={<SubscriptionsIcon />}
+        />
       </List>
       <Divider />
       <List>
-        <MenuListItem primary="Library" icon={<VideoLibraryIcon />} />
+        <MenuListItem
+          to="/feed/libray"
+          primary="Library"
+          icon={<VideoLibraryIcon />}
+        />
         <MenuListItem primary="History" icon={<HistoryIcon />} />
         <MenuListItem primary="Your videos" icon={<OndemandVideoIcon />} />
         <MenuListItem primary="Watch later" icon={<WatchLaterIcon />} />
