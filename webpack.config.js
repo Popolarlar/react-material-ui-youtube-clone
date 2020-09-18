@@ -1,6 +1,11 @@
+const path = require("path");
+const webpack = require("webpack");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
+  output: {
+    publicPath: "/", // <- this is the important line along with historyApiFallback = true in the dev server config
+  },
   module: {
     rules: [
       {
@@ -48,4 +53,8 @@ module.exports = {
       filename: "./index.html",
     }),
   ],
+  // https://stackoverflow.com/questions/56573363/react-router-v4-nested-routes-not-work-with-webpack-dev-server
+  devServer: {
+    historyApiFallback: true,
+  },
 };
