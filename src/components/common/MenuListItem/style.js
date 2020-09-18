@@ -17,7 +17,7 @@ const style = (theme) => ({
       color: theme.palette.error.main,
     },
 
-    "& .icon": {
+    "& .menuIcon": {
       minWidth: "unset",
       color: "inherit",
     },

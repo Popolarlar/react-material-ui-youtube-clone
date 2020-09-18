@@ -17,10 +17,25 @@ import MenuListItem from "../../../../common/MenuListItem";
 const MiniSideBar = ({ classes }) => {
   return (
     <List className={classes.root} component="nav">
-      <MenuListItem text="Home" icon={<HomeIcon />} active mini />
-      <MenuListItem text="Trending" icon={<WhatshotIcon />} mini />
-      <MenuListItem text="Subscriptions" icon={<SubscriptionsIcon />} mini />
-      <MenuListItem text="Library" icon={<VideoLibraryIcon />} mini />
+      <MenuListItem to="/" primary="Home" icon={<HomeIcon />} active mini />
+      <MenuListItem
+        to="/feed/trending"
+        primary="Trending"
+        icon={<WhatshotIcon />}
+        mini
+      />
+      <MenuListItem
+        to="/feed/subscriptions"
+        primary="Subscriptions"
+        icon={<SubscriptionsIcon />}
+        mini
+      />
+      <MenuListItem
+        to="/feed/libray"
+        primary="Library"
+        icon={<VideoLibraryIcon />}
+        mini
+      />
     </List>
   );
 };

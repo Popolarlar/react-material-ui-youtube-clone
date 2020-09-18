@@ -5,7 +5,7 @@
 const style = (theme) => ({
   root: {
     height: "100%",
-    // paddingTop: theme.mixins.toolbar.minHeight,
+    paddingTop: theme.mixins.toolbar.minHeight,
   },
   list: {
     padding: 0,

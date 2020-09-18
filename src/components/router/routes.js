@@ -4,6 +4,9 @@ import { RenderRoutes } from "./RenderRoutes";
 
 // Components
 import Home from "./../views/Home";
+import Trending from "./../views/Trending";
+import Subscriptions from "./../views/Subscriptions";
+import Libray from "./../views/Libray";
 
 const ROUTES = [
   { path: "/", key: "ROOT", exact: true, component: Home },
@@ -22,20 +25,20 @@ const ROUTES = [
         path: "/feed/trending",
         key: "FEED_TRENDING",
         exact: true,
-        component: () => <h1>Trending</h1>,
+        component: Trending,
       },
 
       {
         path: "/feed/subscriptions",
         key: "FEED_SUBSCRIPTIONS",
         exact: true,
-        component: () => <h1>Subscriptions</h1>,
+        component: Subscriptions,
       },
       {
         path: "/feed/libray",
         key: "FEED_LIBRAY",
         exact: true,
-        component: () => <h1>Libray</h1>,
+        component: Libray,
       },
     ],
   },

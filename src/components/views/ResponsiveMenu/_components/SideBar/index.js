@@ -22,17 +22,17 @@ const SideBar = ({ classes }) => {
   return (
     <div className={classes.root}>
       <List className={classes.list}>
-        <MenuListItem text="Home" icon={<HomeIcon />} active />
-        <MenuListItem text="Trending" icon={<WhatshotIcon />} />
-        <MenuListItem text="Subscriptions" icon={<SubscriptionsIcon />} />
+        <MenuListItem primary="Home" icon={<HomeIcon />} active />
+        <MenuListItem primary="Trending" icon={<WhatshotIcon />} />
+        <MenuListItem primary="Subscriptions" icon={<SubscriptionsIcon />} />
       </List>
       <Divider />
       <List>
-        <MenuListItem text="Library" icon={<VideoLibraryIcon />} />
-        <MenuListItem text="History" icon={<HistoryIcon />} />
-        <MenuListItem text="Your videos" icon={<OndemandVideoIcon />} />
-        <MenuListItem text="Watch later" icon={<WatchLaterIcon />} />
-        <MenuListItem text="Playlist" icon={<PlaylistPlayIcon />} />
+        <MenuListItem primary="Library" icon={<VideoLibraryIcon />} />
+        <MenuListItem primary="History" icon={<HistoryIcon />} />
+        <MenuListItem primary="Your videos" icon={<OndemandVideoIcon />} />
+        <MenuListItem primary="Watch later" icon={<WatchLaterIcon />} />
+        <MenuListItem primary="Playlist" icon={<PlaylistPlayIcon />} />
       </List>
       <Divider />
     </div>
