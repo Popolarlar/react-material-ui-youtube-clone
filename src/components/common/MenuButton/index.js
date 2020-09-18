@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { IconButton, Menu, MenuItem } from "@material-ui/core";
 
-const MenuButton = ({ icon, items }) => {
+// Custom styles
+import { withStyles } from "@material-ui/core";
+import style from "./style";
+
+const MenuButton = ({ classes, icon, items }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
@@ -20,6 +24,7 @@ const MenuButton = ({ icon, items }) => {
         aria-haspopup="true"
         onClick={handleMenu}
         color="inherit"
+        className={classes.menuButton}
       >
         {icon}
       </IconButton>
@@ -51,4 +56,4 @@ const MenuButton = ({ icon, items }) => {
   );
 };
 
-export default MenuButton;
+export default withStyles(style)(MenuButton);

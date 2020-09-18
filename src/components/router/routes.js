@@ -2,8 +2,11 @@ import React from "react";
 import { Route } from "react-router-dom";
 import { RenderRoutes } from "./RenderRoutes";
 
+// Components
+import Home from "./../views/Home";
+
 const ROUTES = [
-  { path: "/", key: "ROOT", exact: true, component: () => <h1>Log in</h1> },
+  { path: "/", key: "ROOT", exact: true, component: Home },
   { path: "/test", key: "TEST", exact: true, component: () => <h1>Test</h1> },
   {
     path: "/app",

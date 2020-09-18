@@ -7,6 +7,7 @@
         "alias": {
           "@format/date": "./src/utils/format/date",
           "@assets/resource": "./src/assets/resource",
+          "@assets/logo": "./src/assets/yt_logo_rgb_light.png",
           "@data": "./src/videoData"
         }
       }

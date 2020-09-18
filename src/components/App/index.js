@@ -11,16 +11,11 @@ import theme from "../../theme";
 // CSS reset
 import CssBaseline from "@material-ui/core/CssBaseline";
 
-// Components
-import Home from "./../views/Home";
-
 const App = () => {
   return (
     <>
       <CssBaseline />
       <ThemeProvider theme={theme}>
-        {/* <Home /> */}
-
         <RenderRoutes routes={ROUTES} />
       </ThemeProvider>
     </>

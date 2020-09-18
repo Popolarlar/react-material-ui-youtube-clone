@@ -10,18 +10,8 @@ const style = (theme) => ({
     color: theme.palette.text.primary,
     boxShadow: "unset",
     zIndex: theme.zIndex.drawer + 1,
+  },
 
-    "& .MuiIconButton-root": {
-      padding: theme.spacing(1),
-    },
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  logo: {
-    display: "block",
-    width: "80px",
-  },
   search: {
     flex: "1 1 auto",
     display: "none",

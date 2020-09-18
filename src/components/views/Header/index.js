@@ -1,19 +1,9 @@
 import React from "react";
-import {
-  AppBar,
-  Toolbar,
-  IconButton,
-  Typography,
-  InputBase,
-  Avatar,
-  Hidden,
-} from "@material-ui/core";
-import MenuIcon from "@material-ui/icons/Menu";
+import { AppBar, Toolbar, InputBase, Avatar } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 import VideoCallIcon from "@material-ui/icons/VideoCall";
 import AppsIcon from "@material-ui/icons/Apps";
 import NotificationsIcon from "@material-ui/icons/Notifications";
-import logo from "./../../../assets/yt_logo_rgb_light.png";
 import { AvatarImg } from "../../../assets/resource";
 import MenuButton from "../../common/MenuButton";
 
@@ -21,41 +11,18 @@ import MenuButton from "../../common/MenuButton";
 import { withStyles } from "@material-ui/core";
 import style from "./style";
 
+// Components
+import MenuLogo from "./_components/MenuLogo";
+
 const Header = ({ classes, toggleDrawer, toggleMenuExpand }) => {
   return (
     <>
       <AppBar className={classes.root}>
         <Toolbar>
-          <Hidden lgUp>
-            <IconButton
-              edge="start"
-              className={classes.menuButton}
-              color="inherit"
-              aria-label="open drawer"
-              onClick={toggleDrawer}
-            >
-              <MenuIcon />
-            </IconButton>
-          </Hidden>
-          <Hidden mdDown>
-            <IconButton
-              edge="start"
-              className={classes.menuButton}
-              color="inherit"
-              aria-label="expand menu"
-              onClick={toggleMenuExpand}
-            >
-              <MenuIcon />
-            </IconButton>
-          </Hidden>
-          {logo ? (
-            <img src={logo} alt="logo" className={classes.logo} />
-          ) : (
-            <Typography variant="h6" noWrap>
-              YouTube
-            </Typography>
-          )}
-
+          <MenuLogo
+            toggleDrawer={toggleDrawer}
+            toggleMenuExpand={toggleMenuExpand}
+          />
           <div className={classes.search}>
             <div className={classes.searchInput}>
               <div className={classes.searchIcon}>
@@ -71,7 +38,6 @@ const Header = ({ classes, toggleDrawer, toggleMenuExpand }) => {
               />
             </div>
           </div>
-
           <div className={classes.sectionDesktop}>
             <MenuButton
               icon={<VideoCallIcon />}
