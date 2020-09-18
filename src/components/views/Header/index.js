@@ -80,7 +80,7 @@ const Header = ({ classes, toggleDrawer, toggleMenuExpand }) => {
           </div>
         </Toolbar>
       </AppBar>
-      <div className={classes.offset} />
+      {/* <div className={classes.offset} /> */}
     </>
   );
 };

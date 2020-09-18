@@ -6,8 +6,8 @@ import style from "./style";
 
 // Components
 import { Drawer } from "@material-ui/core";
-import MiniSideBar from "./../MiniSideBar";
-import SideBar from "./../SideBar";
+import MiniSideBar from "./_components/MiniSideBar";
+import SideBar from "./_components/SideBar";
 
 const ResponsiveMenu = ({ classes, menuExpand }) => {
   return (

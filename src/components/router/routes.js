@@ -7,23 +7,35 @@ import Home from "./../views/Home";
 
 const ROUTES = [
   { path: "/", key: "ROOT", exact: true, component: Home },
-  { path: "/test", key: "TEST", exact: true, component: () => <h1>Test</h1> },
   {
-    path: "/app",
-    key: "APP",
+    path: "/feed",
+    key: "FEED",
     component: RenderRoutes,
     routes: [
       {
-        path: "/app",
-        key: "APP_ROOT",
+        path: "/feed",
+        key: "FEED_ROOT",
         exact: true,
-        component: () => <h1>App Index</h1>,
+        component: () => <h1>Feed</h1>,
       },
       {
-        path: "/app/page",
-        key: "APP_PAGE",
+        path: "/feed/trending",
+        key: "FEED_TRENDING",
         exact: true,
-        component: () => <h1>App Page</h1>,
+        component: () => <h1>Trending</h1>,
+      },
+
+      {
+        path: "/feed/subscriptions",
+        key: "FEED_SUBSCRIPTIONS",
+        exact: true,
+        component: () => <h1>Subscriptions</h1>,
+      },
+      {
+        path: "/feed/libray",
+        key: "FEED_LIBRAY",
+        exact: true,
+        component: () => <h1>Libray</h1>,
       },
     ],
   },
