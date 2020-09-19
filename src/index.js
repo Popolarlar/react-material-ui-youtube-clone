@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { hot } from "react-hot-loader/root";
 
 // Router
 import { BrowserRouter } from "react-router-dom";
@@ -7,9 +8,19 @@ import { BrowserRouter } from "react-router-dom";
 // Components
 import App from "./components/App";
 
-ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
-  document.getElementById("root")
-);
+const render = (Component) =>
+  ReactDOM.render(
+    <BrowserRouter>
+      <Component />
+    </BrowserRouter>,
+    document.getElementById("root")
+  );
+
+render(hot(App));
+
+// ReactDOM.render(
+//   <BrowserRouter>
+//     <App />
+//   </BrowserRouter>,
+//   document.getElementById("root")
+// );

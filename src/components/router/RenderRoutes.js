@@ -4,6 +4,8 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import { RouteWithSubRoutes } from "./routes";
+import Loading from "./../views/Loading";
+import NotFound from "./../views/NotFound";
 
 export function RenderRoutes({ routes }) {
   return (
@@ -11,7 +13,7 @@ export function RenderRoutes({ routes }) {
       {routes.map((route) => {
         return <RouteWithSubRoutes key={route.key} {...route} />;
       })}
-      <Route component={() => <h1>Not Found!</h1>} />
+      <Route component={NotFound} />
     </Switch>
   );
 }

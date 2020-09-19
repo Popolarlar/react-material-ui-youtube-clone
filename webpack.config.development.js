@@ -1,8 +1,21 @@
+const path = require("path");
+const webpack = require("webpack");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const port = process.env.PORT || 3000;
 
 module.exports = {
+  mode: "development",
+  entry: "./src/index.js",
   output: {
-    publicPath: "/", // <- this is the important line along with historyApiFallback = true in the dev server config
+    path: path.resolve(__dirname, "dist"),
+    filename: "[name].[hash].js",
+    publicPath: "/",
+  },
+  devtool: "inline-source-map",
+  resolve: {
+    alias: {
+      "react-dom": "@hot-loader/react-dom",
+    },
   },
   module: {
     rules: [
@@ -48,11 +61,16 @@ module.exports = {
   plugins: [
     new HtmlWebPackPlugin({
       template: "./src/index.html",
-      filename: "./index.html",
+      // filename: "./index.html",
     }),
+    new webpack.HotModuleReplacementPlugin(),
   ],
   // https://stackoverflow.com/questions/56573363/react-router-v4-nested-routes-not-work-with-webpack-dev-server
   devServer: {
+    host: "localhost",
+    port: port,
     historyApiFallback: true,
+    open: true,
+    hot: true,
   },
 };
