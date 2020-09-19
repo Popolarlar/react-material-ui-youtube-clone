@@ -10,12 +10,14 @@
   "author": "MJ",
   "license": "MIT",
   "main": "index.js",
+  "homepage": "https://popolarlar.github.io/react-material-ui-youtube-clone",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --open --config webpack.config.development.js",
     "prebuild": "rimraf dist",
     "build": "cross-env NODE_ENV=production webpack -p --config webpack.config.production.js",
-    "run-build": "serve -s dist",
+    "prd": "serve -s dist",
+    "predeploy": "npm run build",
     "deploy": "git subtree push --prefix dist origin gh-pages"
   },
   "dependencies": {
