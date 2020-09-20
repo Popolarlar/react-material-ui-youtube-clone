@@ -14,7 +14,6 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 const App = () => {
   return (
     <>
-      {console.log(process.env.PUBLIC_URL, process.env.NODE_ENV)}
       <CssBaseline />
       <ThemeProvider theme={theme}>
         <RenderRoutes routes={ROUTES} />

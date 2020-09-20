@@ -8,7 +8,7 @@ import { Divider } from "@material-ui/core";
 
 // Components
 import ChipBar from "./_components/ChipBar";
-import VideoGrid from "./_components/VideoGrid/VideoGridContainer";
+import VideoGrid from "./../../common/VideoGrid/VideoGridContainer";
 
 const Home = () => {
   return (

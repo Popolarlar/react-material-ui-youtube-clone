@@ -8,7 +8,7 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 
-const MenuListItem = ({ classes, icon, to, primary, mini, active }) => {
+const MenuListItem = ({ classes, icon, to, primary, mini }) => {
   const renderLink = React.useMemo(
     () =>
       React.forwardRef((itemProps, ref) => (
@@ -26,9 +26,6 @@ const MenuListItem = ({ classes, icon, to, primary, mini, active }) => {
   return (
     <ListItem
       button
-      // className={`${mini ? classes.miniRoot : classes.root} ${
-      //   active && "active"
-      // }`}
       className={mini ? classes.miniRoot : classes.root}
       component={renderLink}
     >
