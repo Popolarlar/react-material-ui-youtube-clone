@@ -1,9 +1,12 @@
 import React from "react";
-import VideoGrid from "./VideoGrid";
+
 // Dummy data
 import { HighLightVideo, NewsVideo } from "@data";
 
-const VideoGridContainer = ({ source, ...others }) => {
+// Components
+import VideoGrid from "@components/common/VideoGrid";
+
+const HomeVideoGrid = ({ source, ...others }) => {
   // Use prop.source to fetch data
 
   return (
@@ -14,4 +17,4 @@ const VideoGridContainer = ({ source, ...others }) => {
   );
 };
 
-export default VideoGridContainer;
+export default HomeVideoGrid;

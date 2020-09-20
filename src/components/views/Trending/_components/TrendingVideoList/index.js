@@ -4,7 +4,7 @@ import React from "react";
 import { HighLightVideo } from "@data";
 
 // Components
-import VideoList from "./../../../../common/VideoList";
+import VideoList from "@components/common/VideoList";
 
 const TrendingVideoList = ({ source, ...others }) => {
   // Use prop.source to fetch data

@@ -16,7 +16,7 @@ import WatchLaterIcon from "@material-ui/icons/WatchLater";
 import PlaylistPlayIcon from "@material-ui/icons/PlaylistPlay";
 
 // Components
-import MenuListItem from "../../../../common/MenuListItem";
+import MenuListItem from "@components/common/MenuListItem";
 
 const SideBar = ({ classes, toggleDrawer }) => {
   return (

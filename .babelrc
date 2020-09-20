@@ -12,7 +12,8 @@
           "@format/text": "./src/utils/format/text",
           "@assets/resource": "./src/assets/resource",
           "@assets/logo": "./src/assets/yt_logo_rgb_light.png",
-          "@data": "./src/videoData"
+          "@data": "./src/videoData",
+          "@components/common": "./src/components/common"
         }
       }
     ],

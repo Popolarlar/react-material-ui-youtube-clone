@@ -1,17 +1,19 @@
 import React from "react";
+
+// Material ui
 import { AppBar, Toolbar, InputBase, Avatar } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 import VideoCallIcon from "@material-ui/icons/VideoCall";
 import AppsIcon from "@material-ui/icons/Apps";
 import NotificationsIcon from "@material-ui/icons/Notifications";
-import { AvatarImg } from "../../../assets/resource";
-import MenuButton from "../../common/MenuButton";
 
 // Custom styles
 import { withStyles } from "@material-ui/core";
 import style from "./style";
 
 // Components
+import MenuButton from "@components/common/MenuButton";
+import { AvatarImg } from "@assets/resource";
 import MenuLogo from "./_components/MenuLogo";
 
 const Header = ({ classes, toggleDrawer, toggleMenuExpand }) => {

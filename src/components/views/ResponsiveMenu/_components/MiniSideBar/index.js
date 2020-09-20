@@ -12,7 +12,7 @@ import SubscriptionsIcon from "@material-ui/icons/Subscriptions";
 import VideoLibraryIcon from "@material-ui/icons/VideoLibrary";
 
 // Components
-import MenuListItem from "../../../../common/MenuListItem";
+import MenuListItem from "@components/common/MenuListItem";
 
 const MiniSideBar = ({ classes }) => {
   return (
