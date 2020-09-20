@@ -64,6 +64,11 @@ module.exports = {
       // filename: "./index.html",
     }),
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.DefinePlugin({
+      "process.env.PUBLIC_URL": JSON.stringify(
+        "/react-material-ui-youtube-clone/"
+      ),
+    }),
   ],
   // https://stackoverflow.com/questions/56573363/react-router-v4-nested-routes-not-work-with-webpack-dev-server
   devServer: {

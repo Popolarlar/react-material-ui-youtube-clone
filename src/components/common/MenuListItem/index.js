@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import { withStyles } from "@material-ui/core";
 import style from "./style";
@@ -12,7 +12,13 @@ const MenuListItem = ({ classes, icon, to, primary, mini, active }) => {
   const renderLink = React.useMemo(
     () =>
       React.forwardRef((itemProps, ref) => (
-        <Link to={to ? to : "/"} ref={ref} {...itemProps} />
+        <NavLink
+          to={to ? to : "/"}
+          ref={ref}
+          {...itemProps}
+          exact
+          activeClassName="active"
+        />
       )),
     [to]
   );
@@ -20,9 +26,10 @@ const MenuListItem = ({ classes, icon, to, primary, mini, active }) => {
   return (
     <ListItem
       button
-      className={`${mini ? classes.miniRoot : classes.root} ${
-        active && "active"
-      }`}
+      // className={`${mini ? classes.miniRoot : classes.root} ${
+      //   active && "active"
+      // }`}
+      className={mini ? classes.miniRoot : classes.root}
       component={renderLink}
     >
       {icon && <ListItemIcon className="menuIcon">{icon}</ListItemIcon>}

@@ -9,7 +9,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "static/[name].[hash].js",
-    publicPath: "/",
+    publicPath: "/react-material-ui-youtube-clone/",
   },
   devtool: "source-map",
   module: {
@@ -73,6 +73,11 @@ module.exports = {
     // Create the stylesheet under 'styles' directory
     new MiniCssExtractPlugin({
       filename: "styles/styles.[hash].css",
+    }),
+    new webpack.DefinePlugin({
+      "process.env.PUBLIC_URL": JSON.stringify(
+        "/react-material-ui-youtube-clone/"
+      ),
     }),
   ],
 };

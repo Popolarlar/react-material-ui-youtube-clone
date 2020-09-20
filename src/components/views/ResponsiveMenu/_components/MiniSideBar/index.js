@@ -17,7 +17,7 @@ import MenuListItem from "../../../../common/MenuListItem";
 const MiniSideBar = ({ classes }) => {
   return (
     <List className={classes.root} component="nav">
-      <MenuListItem to="/" primary="Home" icon={<HomeIcon />} active mini />
+      <MenuListItem to="/" primary="Home" icon={<HomeIcon />} mini />
       <MenuListItem
         to="/feed/trending"
         primary="Trending"
