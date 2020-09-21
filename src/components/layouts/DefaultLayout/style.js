@@ -8,6 +8,7 @@ const style = (theme) => ({
     color: theme.palette.text.primary,
   },
   content: {
+    height: "100vh",
     paddingTop: theme.mixins.toolbar.minHeight,
     display: "flex",
   },

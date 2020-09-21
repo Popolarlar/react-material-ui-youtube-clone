@@ -20,16 +20,6 @@ const VideoLayout = ({ classes, children }) => {
     setMenuExpand(!menuExpand);
   };
 
-  // use React.Children to iterate over the children, and then clone each element with new props (shallow merged) using React.cloneElement.
-  const childrenWithProps = React.Children.map(children, (child) => {
-    const props = { menuExpand };
-
-    if (React.isValidElement(child)) {
-      return React.cloneElement(child, props);
-    }
-    return child;
-  });
-
   return (
     <div className={classes.root}>
       <Header toggleDrawer={toggleDrawer} toggleMenuExpand={toggleMenuExpand} />
@@ -37,7 +27,7 @@ const VideoLayout = ({ classes, children }) => {
         <MenuDrawer drawerOpen={drawerOpen} toggleDrawer={toggleDrawer} />
       </nav>
 
-      <div className={classes.content}>{childrenWithProps}</div>
+      <div className={classes.content}>{children}</div>
     </div>
   );
 };
