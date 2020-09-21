@@ -1,40 +1,17 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { makeStyles } from "@material-ui/core/styles";
+
+// Material ui
 import { Avatar, Typography } from "@material-ui/core";
+
+// Custom style
+import { withStyles } from "@material-ui/core";
+import style from "./style";
+
+// Resource
 import { AvatarImg } from "@assets/resource";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    width: "100%",
-  },
-  thumbnail: {
-    position: "relative",
-    paddingBottom: "56.2%", // aspect ratio 16:9
-    marginBottom: theme.spacing(2),
-
-    "& > img": {
-      position: "absolute",
-      objectFit: "cover",
-      width: "100%",
-      height: " 100%",
-    },
-  },
-  details: {
-    display: "flex",
-  },
-  meta: {
-    marginLeft: theme.spacing(1.5),
-    color: "rgb(96,96,96)",
-  },
-  title: {
-    fontWeight: theme.typography.fontWeightMedium,
-    color: "rgb(3,3,3)",
-  },
-}));
-
-const VideoGridItem = ({ id, title, channel, views, thumbnail }) => {
-  const classes = useStyles();
+const VideoGridItem = ({ classes, id, title, channel, views, thumbnail }) => {
   const history = useHistory();
 
   const handleVideoClick = (e) => {
@@ -68,4 +45,4 @@ const VideoGridItem = ({ id, title, channel, views, thumbnail }) => {
   );
 };
 
-export default VideoGridItem;
+export default withStyles(style)(VideoGridItem);

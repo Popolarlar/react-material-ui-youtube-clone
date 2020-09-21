@@ -11,9 +11,8 @@ const style = (theme) => ({
   },
   thumbnail: {
     position: "relative",
-    width: "246px",
-    height: "138px",
-    marginRight: theme.spacing(2),
+    paddingBottom: "56.2%", // aspect ratio 16:9
+    marginBottom: theme.spacing(2),
 
     "& > img": {
       position: "absolute",
@@ -23,18 +22,15 @@ const style = (theme) => ({
     },
   },
   details: {
-    maxWidth: "600px",
+    display: "flex",
   },
   meta: {
+    marginLeft: theme.spacing(1.5),
     color: "rgb(96,96,96)",
   },
   title: {
     fontWeight: theme.typography.fontWeightMedium,
-    fontSize: theme.typography.htmlFontSize,
     color: "rgb(3,3,3)",
-  },
-  description: {
-    paddingTop: theme.spacing(2),
   },
 });
 

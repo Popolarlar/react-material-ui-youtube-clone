@@ -10,19 +10,19 @@ import Header from "./../../views/Header";
 
 const VideoLayout = ({ classes, children }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [menuExpand, setMenuExpand] = useState(false);
+  // const [menuExpand, setMenuExpand] = useState(false);
 
   const toggleDrawer = () => {
     setDrawerOpen(!drawerOpen);
   };
 
-  const toggleMenuExpand = () => {
-    setMenuExpand(!menuExpand);
-  };
+  // const toggleMenuExpand = () => {
+  //   setMenuExpand(!menuExpand);
+  // };
 
   return (
     <div className={classes.root}>
-      <Header toggleDrawer={toggleDrawer} toggleMenuExpand={toggleMenuExpand} />
+      <Header toggleDrawer={toggleDrawer} toggleMenuExpand={toggleDrawer} />
       <nav>
         <MenuDrawer drawerOpen={drawerOpen} toggleDrawer={toggleDrawer} />
       </nav>

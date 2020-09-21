@@ -1,7 +1,8 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 
 // Material ui
-import { Grid, Typography, ButtonBase } from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
 
 // Custom style
 import { withStyles } from "@material-ui/core";
@@ -10,13 +11,31 @@ import style from "./style";
 // Uitility
 import * as textService from "@format/text";
 
-const VideoGridItem = ({ classes, title, channel, views, thumbnail, desc }) => {
+const VideoGridItem = ({
+  classes,
+  id,
+  title,
+  channel,
+  views,
+  thumbnail,
+  desc,
+  withoutDesc,
+}) => {
+  const history = useHistory();
+
+  const handleVideoClick = (e) => {
+    e.stopPropagation();
+    history.push({
+      pathname: `/watch/${id}`,
+    });
+  };
+
   return (
-    <Grid container>
+    <Grid container className={classes.root} onClick={handleVideoClick}>
       <Grid item>
-        <ButtonBase className={classes.thumbnail}>
+        <div className={classes.thumbnail}>
           <img src={thumbnail} alt="thumbnail" />
-        </ButtonBase>
+        </div>
       </Grid>
 
       <Grid item xs container direction="column" className={classes.details}>
@@ -30,7 +49,7 @@ const VideoGridItem = ({ classes, title, channel, views, thumbnail, desc }) => {
         </Grid>
         <Grid item className={classes.description} zeroMinWidth>
           <Typography variant="body2">
-            {desc && textService.TrimDesc(desc, 150)}
+            {!withoutDesc && desc && textService.TrimDesc(desc, 150)}
             {/* {desc} */}
           </Typography>
         </Grid>
