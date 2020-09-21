@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import { Avatar, Typography } from "@material-ui/core";
 import { AvatarImg } from "@assets/resource";
@@ -32,10 +33,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const VideoGridItem = ({ title, channel, views, thumbnail }) => {
+const VideoGridItem = ({ id, title, channel, views, thumbnail }) => {
   const classes = useStyles();
+  const history = useHistory();
+
+  const handleVideoClick = (e) => {
+    e.stopPropagation();
+    history.push({
+      pathname: `/watch/${id}`,
+    });
+  };
+
   return (
-    <div className={classes.root}>
+    <div className={classes.root} onClick={handleVideoClick}>
       <div className={classes.thumbnail}>
         <img src={thumbnail} alt="thumbnail" />
       </div>

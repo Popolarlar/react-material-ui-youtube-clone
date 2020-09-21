@@ -7,6 +7,7 @@ import Home from "./../views/Home";
 import Trending from "./../views/Trending";
 import Subscriptions from "./../views/Subscriptions";
 import Libray from "./../views/Libray";
+import WatchVideo from "./../views/WatchVideo";
 
 const ROUTES = [
   { path: "/", key: "ROOT", exact: true, component: Home },
@@ -41,6 +42,11 @@ const ROUTES = [
         component: Libray,
       },
     ],
+  },
+  {
+    path: "/watch/:videoId",
+    key: "WATCH",
+    component: WatchVideo,
   },
 ];
 
